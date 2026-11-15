@@ -6,7 +6,7 @@ model: haiku
 
 # MD → Mind Map
 
-Requires the `mind-map` skill installed at `~/.claude/skills/mind-map/`. If `~/.claude/skills/mind-map/scripts/import.mjs` is missing, stop and tell the user to install `mind-map` first. Don't improvise a converter.
+Requires the `mind-map` skill installed next to this one. If `${CLAUDE_SKILL_DIR}/../mind-map/scripts/import.mjs` is missing, stop and tell the user to install `mind-map` first. Don't improvise a converter.
 
 Use this for existing notes. For a fresh idea with no notes, use `/mind-map` instead.
 
@@ -14,7 +14,7 @@ Use this for existing notes. For a fresh idea with no notes, use `/mind-map` ins
 2. Run from the user's project folder (maps are written under `./mindmaps/`):
 
 ```
-node ~/.claude/skills/mind-map/scripts/import.mjs <file.md | folder> [--out mindmaps]
+node ${CLAUDE_SKILL_DIR}/../mind-map/scripts/import.mjs <file.md | folder> [--out mindmaps]
 ```
 
 - One map per file, at `mindmaps/<slug>/`. A folder is searched recursively.

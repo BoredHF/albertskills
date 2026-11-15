@@ -7,10 +7,10 @@ description: Token-lean executor that gets projects finished. Turns a /mind-map 
 
 Execute a plan cheaply, keep the user coding and learning, and **reach a finished v1**.
 
-**Requires** the `mind-map` skill at `~/.claude/skills/mind-map/` (the scripts here stop with a one-line message if it is missing) and Node 18+. Not for one-off tasks with no plan: do them directly, or use the `delegate` skill.
+**Requires** the `mind-map` skill installed next to this one (the scripts here stop with a one-line message if it is missing) and Node 18+. Not for one-off tasks with no plan: do them directly, or use the `delegate` skill.
 
 ## First run
-If `~/.claude/agents/delegate.md` is missing, copy it from `~/.claude/skills/work/agents/delegate.md` (create `~/.claude/agents/` if needed). Without it, spawn a `general-purpose` agent with the same card as the brief.
+If `~/.claude/agents/delegate.md` is missing, copy it from `${CLAUDE_SKILL_DIR}/agents/delegate.md` (create `~/.claude/agents/` if needed). Without it, spawn a `general-purpose` agent with the same card as the brief.
 
 ## Hard rules
 - Never write code on a drive card.
@@ -44,7 +44,7 @@ If `~/.claude/agents/delegate.md` is missing, copy it from `~/.claude/skills/wor
 
 The subs below still work if typed, as shortcuts.
 
-All state lives in the project's `.work/` folder. Scripts are in this skill's `scripts/` folder; run them with `node ~/.claude/skills/work/scripts/<name>.mjs`.
+All state lives in the project's `.work/` folder. Scripts are in this skill's `scripts/` folder; run them with `node ${CLAUDE_SKILL_DIR}/scripts/<name>.mjs`.
 
 | File | Holds | Limit |
 |---|---|---|

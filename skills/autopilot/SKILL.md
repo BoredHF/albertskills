@@ -5,7 +5,7 @@ description: Hands-off mode where Claude prompts itself until a mission is done,
 
 # /autopilot
 
-The user says "autopilot", answers one question round, and walks away. You work until the mission is done, then report back. A Stop hook (`stop.mjs`) re-prompts you after every reply while `.work/autopilot.json` is on. Scripts live in `~/.claude/skills/autopilot/scripts/`.
+The user says "autopilot", answers one question round, and walks away. You work until the mission is done, then report back. A Stop hook (`stop.mjs`) re-prompts you after every reply while `.work/autopilot.json` is on. Scripts live in `${CLAUDE_SKILL_DIR}/scripts/`.
 
 ## When not to use it
 - The task is one small edit or one question: just do it.
@@ -20,13 +20,13 @@ The user says "autopilot", answers one question round, and walks away. You work 
 - Keep state in `.work/` of the project, never elsewhere.
 
 ## `off` / `status`
-Run `node ~/.claude/skills/autopilot/scripts/toggle.mjs off` (or `status`) in the project folder. Print the line it outputs. Stop.
+Run `node ${CLAUDE_SKILL_DIR}/scripts/toggle.mjs off` (or `status`) in the project folder. Print the line it outputs. Stop.
 
 ## First run (once per machine)
 Before starting, read `~/.claude/settings.json` and look for `autopilot` in its hooks.
 - Stop hook (`stop.mjs`) and SessionStart hook (`brief.mjs`) are required. Without the Stop hook nothing re-prompts you.
 - The statusLine entry (`statusline.mjs`) is optional: it only adds a badge. If the user already has a statusLine, skip it.
-- If any required entry is missing, show the user the exact entries from `~/.claude/skills/autopilot/references/hooks.json`, and ask. Merge them only after a yes, keeping existing hooks. Tell the user to restart Claude Code so the hooks load, then stop.
+- If any required entry is missing, show the user the entries from `${CLAUDE_SKILL_DIR}/references/hooks.json` with every `SKILL_DIR` replaced by the absolute path `${CLAUDE_SKILL_DIR}`, and ask. Merge them only after a yes, keeping existing hooks. Tell the user to restart Claude Code so the hooks load, then stop. If the hook commands point at a folder that no longer exists (the skill moved or a plugin updated), repeat this step.
 - If the user says no, say autopilot cannot loop without the Stop hook, and stop.
 
 ## Start (anything else)
@@ -50,7 +50,7 @@ Before starting, read `~/.claude/settings.json` and look for `autopilot` in its 
    ## Report
    ```
 
-4. **Engage.** Run `node ~/.claude/skills/autopilot/scripts/toggle.mjs on <cards|mission> <steps> <goal>`. Then go straight into step 1 in the same reply. Don't stop to confirm.
+4. **Engage.** Run `node ${CLAUDE_SKILL_DIR}/scripts/toggle.mjs on <cards|mission> <steps> <goal>`. Then go straight into step 1 in the same reply. Don't stop to confirm.
 
 ## Each step (the hook prompts you with `[autopilot step N/M]`)
 - Do one step, verify it for real (run the test or build), check it off, and add one `## Log` line: `N · what changed · how verified`.

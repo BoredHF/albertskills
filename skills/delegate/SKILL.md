@@ -7,7 +7,7 @@ description: Hand work to subagents properly. Decides whether delegating pays of
 
 Subagents are cheap hands, not trusted judges. You keep the thinking: the split, the briefs and the verification. They do the typing. A delegation is only done when **you** have checked the result.
 
-Scripts: `node ~/.claude/skills/delegate/scripts/waves.mjs [.work/delegate.json] [--tier <tier>]`. Agents: `delegate-worker` (writes code), `Explore` (read-only search).
+Scripts: `node ${CLAUDE_SKILL_DIR}/scripts/waves.mjs [.work/delegate.json] [--tier <tier>]`. Agents: `delegate-worker` (writes code), `Explore` (read-only search).
 
 ## Hard rules
 - Never accept a worker's "pass" without running its DONE check yourself.
@@ -17,7 +17,7 @@ Scripts: `node ~/.claude/skills/delegate/scripts/waves.mjs [.work/delegate.json]
 - Do not delegate inline-lane work, design calls, or decisions the user must make.
 
 ## 0. First run
-If `~/.claude/agents/delegate-worker.md` is missing, copy it from `~/.claude/skills/delegate/agents/delegate-worker.md` (create `~/.claude/agents/` if needed). Without it, spawn a `general-purpose` agent with the same brief and the same report format; everything else is unchanged. Needs Node 18+ for `waves.mjs`.
+If `~/.claude/agents/delegate-worker.md` is missing, copy it from `${CLAUDE_SKILL_DIR}/agents/delegate-worker.md` (create `~/.claude/agents/` if needed). Without it, spawn a `general-purpose` agent with the same brief and the same report format; everything else is unchanged. Needs Node 18+ for `waves.mjs`.
 
 ## 1. Gate: which lane?
 The main thread is the most expensive model in the room. Every file it reads and every log it sees costs top price. So the default is to push work down to a cheaper model, small things included.

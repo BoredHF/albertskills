@@ -1,0 +1,8 @@
+{
+  "name": "albertskills",
+  "version": "1.0.0",
+  "description": "Skills that make Claude think like an expert: red-team, tournament, failure-museum, stuck-detector, intent-diff and more, plus workflow skills.",
+  "author": { "name": "Albert", "url": "https://github.com/BoredHF" },
+  "homepage": "https://github.com/BoredHF/albertskills",
+  "license": "MIT"
+}

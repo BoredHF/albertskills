@@ -49,7 +49,13 @@ Install the albertskills skill pack for me. Clone https://github.com/BoredHF/alb
 
 Want it in one project only? Add: *"Install into .claude/skills/ in this project instead."*
 
-**Or do it yourself.** For every project:
+**Or install it as a Claude Code plugin** (2.1.275 or later):
+
+```
+/plugin install albertskills --marketplace BoredHF/albertskills
+```
+
+**Or copy the files yourself.** For every project:
 
 ```bash
 d=$(mktemp -d) && git clone --depth 1 https://github.com/BoredHF/albertskills "$d" && mkdir -p ~/.claude/skills && cp -r "$d"/skills/* ~/.claude/skills/ && rm -rf "$d"

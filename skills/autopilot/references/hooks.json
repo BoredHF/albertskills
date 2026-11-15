@@ -3,21 +3,21 @@
     "Stop": [
       {
         "hooks": [
-          { "type": "command", "command": "node \"$HOME/.claude/skills/autopilot/scripts/stop.mjs\"", "timeout": 15 }
+          { "type": "command", "command": "node \"SKILL_DIR/scripts/stop.mjs\"", "timeout": 15 }
         ]
       }
     ],
     "SessionStart": [
       {
         "hooks": [
-          { "type": "command", "command": "node \"$HOME/.claude/skills/autopilot/scripts/brief.mjs\"", "timeout": 10 }
+          { "type": "command", "command": "node \"SKILL_DIR/scripts/brief.mjs\"", "timeout": 10 }
         ]
       }
     ]
   },
   "statusLine": {
     "type": "command",
-    "command": "node \"$HOME/.claude/skills/autopilot/scripts/statusline.mjs\"",
+    "command": "node \"SKILL_DIR/scripts/statusline.mjs\"",
     "padding": 0
   }
 }

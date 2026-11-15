@@ -28,13 +28,13 @@ This skill runs for many rounds, so tokens add up. Everything goes through `scri
 - **`ask`:** a multiple-choice quiz the user answers by clicking, one question at a time. Always give `options`: 2–4 short, distinct answers that cover the realistic choices. Set `guess` to the option you honestly think *this* user would pick, judging by their earlier answers; it's pre-selected, so a right guess costs them one click. Add `"multi": true` when several can apply. "Other…" free text is always offered, so don't add an "other" option. Asks are added to their node's open questions and ticked off when answered automatically, so only apply what the ANSWER says.
 - Don't echo the user's speech back. Keep only the short quotes worth saving.
 
-`S` = `node ~/.claude/skills/mind-map/scripts/mm.mjs`. Run everything from the user's project folder: maps live in `./mindmaps/<slug>/`, relative to the current directory. The map dir is remembered after `init` (or the first time you pass `mindmaps/<slug>`), so leave it out. Needs Node 18+.
+`S` = `node ${CLAUDE_SKILL_DIR}/scripts/mm.mjs`. Run everything from the user's project folder: maps live in `./mindmaps/<slug>/`, relative to the current directory. The map dir is remembered after `init` (or the first time you pass `mindmaps/<slug>`), so leave it out. Needs Node 18+.
 
 | Command | Use |
 |---|---|
 | `S list` / `S init "<title>"` | List maps / create `mindmaps/<slug>` with the viewer |
 | `S show` / `S show <id>` | Compact outline (`id "label" [status -LFI] 2? ≡3 →links`, where `-LFI` = missing lenses) / one node in full, only when you need its text |
-| `node ~/.claude/skills/mind-map/scripts/serve.mjs serve` | **Background, once per session.** Serves the viewer at http://127.0.0.1:4178/ (the port may be higher if busy; use the printed URL, and open that, not the file). Running it again is harmless. |
+| `node ${CLAUDE_SKILL_DIR}/scripts/serve.mjs serve` | **Background, once per session.** Serves the viewer at http://127.0.0.1:4178/ (the port may be higher if busy; use the printed URL, and open that, not the file). Running it again is harmless. |
 | `S turn <<'EOF'`…`EOF` | **The round command: background.** Applies the patch, prints stats, then waits for the viewer. |
 | `S wait` | **Background.** Waits without a patch (session start). |
 

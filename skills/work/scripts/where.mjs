@@ -6,7 +6,7 @@ import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseCards, progressLine } from "./ratio.mjs";
-import { requireMindMap } from "./need-mindmap.mjs";
+import { MM_SCRIPT, requireMindMap } from "./need-mindmap.mjs";
 
 const read = (file) => (existsSync(file) ? readFileSync(file, "utf8") : null);
 
@@ -38,7 +38,7 @@ export function decide({ cards, state, learn, maps }) {
     if (maps.length === 0) return "action: no-map | say: no mind map found, run /mind-map first";
     const note = maps.length > 1 ? ` | note: newest of ${maps.length} maps, others: ${maps.slice(1).join(", ")}` : "";
     if (maps[0].endsWith("map-data.js")) {
-      return `action: export | map: ${dirname(maps[0])} | run: node ~/.claude/skills/mind-map/scripts/mm.mjs export ${dirname(maps[0])} then re-run where${note}`;
+      return `action: export | map: ${dirname(maps[0])} | run: node ${MM_SCRIPT} export ${dirname(maps[0])} then re-run where${note}`;
     }
     return `action: plan | map: ${maps[0]}${note}`;
   }

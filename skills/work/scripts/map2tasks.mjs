@@ -5,7 +5,7 @@
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { requireMindMap } from "./need-mindmap.mjs";
+import { MM_SCRIPT, requireMindMap } from "./need-mindmap.mjs";
 
 export const SPECIAL = new Set(["finish", "doubts"]);
 
@@ -77,7 +77,7 @@ export function resolvePath(arg, cwd = process.cwd()) {
 function main() {
   requireMindMap();
   const file = resolvePath(process.argv[2]);
-  if (!existsSync(file)) throw new Error(`${file} not found. Run: node ~/.claude/skills/mind-map/scripts/mm.mjs export mindmaps/<slug>`);
+  if (!existsSync(file)) throw new Error(`${file} not found. Run: node ${MM_SCRIPT} export mindmaps/<slug>`);
   const map = parseExport(readFileSync(file, "utf8"));
   const leaves = collectLeaves(map);
   [...headerLines(map, leaves.length), ...specialLines(map), ...leaves.map(formatLeaf)].forEach((l) => console.log(l));
