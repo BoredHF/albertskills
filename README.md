@@ -91,7 +91,7 @@ Every skill says when *not* to run, and most have a lighter version, so none of 
 | **mind-map** | Turns a brain dump into a branching mind map through rounds of questions, saved as an HTML map you can reopen and resume. | "mind map this", "let me brain dump", "help me break this idea down". | Node.js. |
 | **md-to-map** | Converts existing Markdown notes into mind maps by script, so the notes never get read into context. | "turn these notes into a mind map", "map out this file". | `mind-map`. |
 | **work** | Turns a mind-map plan into task cards with a small v1 finish line, splits the work between you and Claude, and tracks progress. | "let's work on this", "what's next", "I'm stuck". | `mind-map`. |
-| **shipit** | Feature delivery from end to end: grill the requirements, specify, plan, tasks, implement, review, then optionally PR and release. | "ship it", or a feature you want taken all the way. | Spec Kit and a `grilling` skill. |
+| **shipit** | Feature delivery from end to end: grill the requirements, specify, plan, tasks, implement, review, then optionally PR and release. | "ship it", or a feature you want taken all the way. | Spec Kit. |
 
 ## How they combine
 

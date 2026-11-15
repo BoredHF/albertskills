@@ -11,7 +11,7 @@ Not for small fixes or one-file changes: just make the change. Use this when the
 
 ## Requirements (check first)
 - **Spec Kit** installed in the project, so the slash commands `/speckit-specify`, `/speckit-plan`, `/speckit-tasks` and `/speckit-implement` exist (github.com/github/spec-kit).
-- The `grilling` skill and a `code-review` agent. Without `grilling`, stop (see the invocation contract). Without `code-review`, use a general-purpose agent with a review brief.
+- Optional: a `grilling` skill and a `code-review` agent. Without `grilling`, run the requirements interview yourself (step 3). Without `code-review`, use a general-purpose agent with a review brief.
 - `git`, and `gh` or the repo host's CLI if the PR path is chosen.
 
 If Spec Kit is not installed, **stop and say so**, naming the missing commands and the link above. Do not improvise the specify/plan/tasks/implement pipeline by hand, and do not run any phase.
@@ -26,7 +26,7 @@ If Spec Kit is not installed, **stop and say so**, naming the missing commands a
 
 1. If the user invoked this skill with a feature description, use it.
 2. If no description was provided, ask in normal assistant chat for the description and wait. **Do not use `AskUserQuestion` for this step.**
-3. After a description is available, **you must invoke the `grilling` skill tool first**. If `grilling` is unavailable, stop and report that this skill requires it.
+3. After a description is available, **grill the requirements first**. If a `grilling` skill is installed, invoke it. Otherwise interview the user yourself: ask the open decisions in rounds, give a recommended answer to each, and wait for replies before moving on.
 
 ## Phase 1: Grill-and-lock session (interactive)
 
