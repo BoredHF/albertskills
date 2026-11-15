@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect width="1200" height="675" fill="#0d1117"/>
+<text x="40" y="68" font-family="Inter, Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#f0f6fc">Skills that make Claude think like an expert,</text>
+<text x="40" y="110" font-family="Inter, Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#f0f6fc">not just act like one.</text>
+<text x="40" y="158" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="18" fill="#8b949e">&gt; Write parse_duration(s) that turns '1h30m' into seconds.</text>
+<rect x="40" y="185" width="500" height="372" rx="12" fill="#161b22" stroke="#30363d"/>
+<text x="64" y="224" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#8b949e">WITHOUT A SKILL</text>
+<text x="64" y="270" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">def parse_duration(s):</text>
+<text x="64" y="300" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">    total = 0</text>
+<text x="64" y="330" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">    for value, unit in re.findall(</text>
+<text x="64" y="360" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">            r&quot;(\d+)([dhms])&quot;, s):</text>
+<text x="64" y="390" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">        total += int(value) * UNITS[unit]</text>
+<text x="64" y="420" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">    return total</text>
+<text x="64" y="500" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" fill="#8b949e">Looks finished. Ships.</text>
+<rect x="570" y="185" width="590" height="372" rx="12" fill="#161b22" stroke="#30363d"/>
+<text x="594" y="224" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#3fb950">WITH RED-TEAM</text>
+<text x="760" y="224" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#8b949e">Claude attacks its own draft first</text>
+<rect x="594" y="247" width="86" height="28" rx="6" fill="#f85149" fill-opacity="0.15" stroke="#f85149"/>
+<text x="637" y="266" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#f85149">FATAL</text>
+<text x="696" y="268" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#f0f6fc">&quot;1.5h&quot;</text>
+<text x="780" y="268" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#c9d1d9">returns 18000</text>
+<text x="940" y="268" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#8b949e">read as 5h</text>
+<rect x="594" y="293" width="86" height="28" rx="6" fill="#f85149" fill-opacity="0.15" stroke="#f85149"/>
+<text x="637" y="312" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#f85149">FATAL</text>
+<text x="696" y="314" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#f0f6fc">&quot;-1h&quot;</text>
+<text x="780" y="314" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#c9d1d9">returns 3600</text>
+<text x="940" y="314" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#8b949e">sign silently dropped</text>
+<rect x="594" y="339" width="86" height="28" rx="6" fill="#f85149" fill-opacity="0.15" stroke="#f85149"/>
+<text x="637" y="358" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#f85149">FATAL</text>
+<text x="696" y="360" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#f0f6fc">&quot;1h30&quot;</text>
+<text x="780" y="360" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#c9d1d9">returns 3600</text>
+<text x="940" y="360" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#8b949e">the 30 vanished</text>
+<rect x="594" y="385" width="86" height="28" rx="6" fill="#d29922" fill-opacity="0.15" stroke="#d29922"/>
+<text x="637" y="404" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#d29922">SERIOUS</text>
+<text x="696" y="406" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#f0f6fc">&quot;&quot;</text>
+<text x="780" y="406" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#c9d1d9">returns 0</text>
+<text x="940" y="406" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#8b949e">same as a real zero</text>
+<rect x="594" y="431" width="86" height="28" rx="6" fill="#d29922" fill-opacity="0.15" stroke="#d29922"/>
+<text x="637" y="450" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#d29922">SERIOUS</text>
+<text x="696" y="452" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#f0f6fc">&quot;1h1h&quot;</text>
+<text x="780" y="452" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#c9d1d9">returns 7200</text>
+<text x="940" y="452" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#8b949e">repeated unit accepted</text>
+<rect x="594" y="477" width="86" height="28" rx="6" fill="#d29922" fill-opacity="0.15" stroke="#d29922"/>
+<text x="637" y="496" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#d29922">SERIOUS</text>
+<text x="696" y="498" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#f0f6fc">&quot;1H&quot;</text>
+<text x="780" y="498" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" fill="#c9d1d9">returns 0</text>
+<text x="940" y="498" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#8b949e">capital letter ignored</text>
+<text x="40" y="612" font-family="Inter, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" fill="#f0f6fc">9 breaks found, proven by running them, and fixed before you saw the code.</text>
+<text x="40" y="646" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="16" fill="#8b949e">github.com/BoredHF/albertskills</text>
+</svg>
